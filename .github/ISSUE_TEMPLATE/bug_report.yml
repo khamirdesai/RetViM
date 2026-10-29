@@ -1,0 +1,17 @@
+name: Bug report
+description: Report a reproducible problem in code or documentation.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the command, expected behavior, and actual behavior. Do not upload private medical data.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python, PyTorch, timm, operating system, and device.
+    validations:
+      required: true

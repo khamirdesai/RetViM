@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: >-
+  If you use RetViM in research, cite the manuscript below.
+  It is accepted for presentation at IEEE GSCon 2027; final proceedings
+  metadata will be added when available.
+type: software
+title: "RetViM: Research Code and Model Release"
+authors:
+  - family-names: Desai
+    given-names: Khamir
+    affiliation: Sarvajanik College of Engineering and Technology
+repository-code: "https://github.com/khamirdesai/RetViM"
+url: "https://github.com/khamirdesai/RetViM"
+license: MIT
+keywords:
+  - retinal OCT
+  - image classification
+  - vision transformer
+  - state space models
+  - medical imaging
+abstract: >-
+  Research implementation, model artifacts and documentation for RetViM.
+  The software license applies to original release code and documentation;
+  paper figures, datasets and model weights have separate terms.
+preferred-citation:
+  type: unpublished
+  title: "RetViM: Sequential Hybrid Vision Transformer with MedMamba for Retinal Disease Classification"
+  authors:
+    - family-names: Desai
+      given-names: Khamir
+    - family-names: Mehta
+      given-names: Mayuri A.
+    - family-names: Vadapalli
+      given-names: Sree Saicharan
+  year: 2027
+  notes: >-
+    Accepted for presentation at IEEE GSCon 2027, Paper 533,
+    Track 2: Signal Processing, Computer Vision, Multimedia Systems.
+    Conference-year citation; DOI and final proceedings metadata are pending.
+  url: "https://github.com/khamirdesai/RetViM/blob/main/paper/RetViM-GSCON-2027.pdf"

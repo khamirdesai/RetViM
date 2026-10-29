@@ -1,0 +1,24 @@
+# Local research originals and release staging
+.release-work/
+.venv/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+Cross_Domain_OCTDL_Duke_Adaptation.ipynb
+Sequential_Hybrid*.ipynb
+retvim_gscon_camera_ready_submission.pdf
+# Credentials and runtime files
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+.cache/
+output/

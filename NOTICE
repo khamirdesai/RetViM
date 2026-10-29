@@ -1,0 +1,14 @@
+RetViM release maintained by Khamir Desai.
+
+The accompanying paper lists Khamir Desai, Mayuri A. Mehta, and
+Sree Saicharan Vadapalli. See CITATION.cff for scholarly attribution.
+
+This package uses timm (Apache-2.0), PyTorch and torchvision (BSD-style)
+as dependencies. Their licenses remain applicable to those dependencies.
+
+The Mamba selective-state-space recurrence follows the method of Gu and Dao
+and was checked against the official Mamba selective_scan_ref equations:
+https://github.com/state-spaces/mamba
+https://arxiv.org/abs/2312.00752
+Mamba's upstream implementation is Apache-2.0 licensed. This release uses
+an independently written PyTorch reference path; it does not ship CUDA kernels.
