@@ -22,3 +22,7 @@ dist/
 .DS_Store
 .cache/
 output/
+
+# Manuscript and extracted figures held locally until publication
+paper/
+assets/figures/
