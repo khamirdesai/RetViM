@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=75"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "RetViM retinal OCT research: checkpoint-faithful ViT and Mamba inference"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT (code only; see LICENSES.md)"}
+license = "MIT"
+license-files = ["LICENSE", "LICENSES.md", "NOTICE"]
 authors = [{name = "Khamir Desai"}]
 dependencies = [
   "torch>=2.6,<3", "torchvision>=0.21,<1", "timm>=1.0.22,<1.1",
@@ -17,8 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-demo = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "python-multipart>=0.0.20,<1"]
-dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.12,<1"]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
 eval = ["scikit-learn>=1.5,<2"]
 
 [project.scripts]
@@ -27,7 +27,6 @@ retvim = "retvim.cli:main"
 [project.urls]
 Repository = "https://github.com/khamirdesai/RetViM"
 Model = "https://huggingface.co/khamirdesai/RetViM"
-Demo = "https://github.com/khamirdesai/RetViM/blob/main/docs/deployment.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]

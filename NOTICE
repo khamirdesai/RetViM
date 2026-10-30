@@ -3,6 +3,13 @@ RetViM release maintained by Khamir Desai.
 The accompanying paper lists Khamir Desai, Mayuri A. Mehta, and
 Sree Saicharan Vadapalli. See CITATION.cff for scholarly attribution.
 
+The architecture is informed by MedMamba (Yubiao Yue and Zhenzhang Li)
+and VMamba. Their research and upstream repositories are acknowledged:
+https://github.com/YubiaoYue/MedMamba
+https://github.com/MzeroMiko/VMamba
+This package does not bundle the upstream MedMamba.py or VMamba source files,
+and its MIT license does not purport to relicense those projects.
+
 This package uses timm (Apache-2.0), PyTorch and torchvision (BSD-style)
 as dependencies. Their licenses remain applicable to those dependencies.
 

@@ -16,12 +16,10 @@ jobs:
       - name: Install CPU runtime and package
         run: |
           pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cpu
-          pip install -e '.[dev,demo]'
+          pip install -e '.[dev]'
       - name: Static checks
-        run: ruff check src app.py scripts tests
-      - name: Unit and API tests (no weight download)
+        run: ruff check src scripts tests
+      - name: Unit tests (no weight download)
         run: pytest -m 'not weights'
-        env:
-          RETVIM_SKIP_MODEL_LOAD: '1'
       - name: Check public files for accidental credentials
         run: python scripts/check_release.py

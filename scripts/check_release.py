@@ -13,13 +13,15 @@ def main():
         if not item:
             continue
         path = Path(item)
-        if path.name.startswith(".env") or path.suffix in {".ckpt", ".pyc"} or ".release-work" in path.parts:
+        excluded_roots = {"paper", "assets", "examples", "notebooks", "results", "web", ".release-work", "output"}
+        forbidden_suffixes = {".ckpt", ".pyc", ".pdf", ".png", ".jpg", ".jpeg", ".webp", ".ipynb"}
+        if path.name.startswith(".env") or path.suffix in forbidden_suffixes or path.parts[0] in excluded_roots:
             failures.append(f"forbidden artifact: {item}")
         if path.is_file() and path.stat().st_size < 5_000_000 and token_pattern.search(path.read_bytes()):
             failures.append(f"possible credential in {item}")
     if failures:
         raise SystemExit("\n".join(failures))
-    print(f"Validated {len(paths) - 1} tracked files; no credential matches or training checkpoints.")
+    print(f"Validated {len(paths) - 1} tracked files; code-only scope and credential checks passed.")
 
 
 if __name__ == "__main__":

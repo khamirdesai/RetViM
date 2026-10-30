@@ -1,0 +1,31 @@
+{
+  "artifact": "RetViM supplied checkpoint",
+  "maintainer": "Khamir Desai",
+  "source_checkpoint_sha256": "e2e3a17b1cb0fc1feac71bac67d53709119be7ce8aaa6211c774d1b0b3d38c1a",
+  "weights_file": "model.safetensors",
+  "weights_sha256": "45c2042229b00b8ac882722c092b5e99708b6ff1d8ab900ae7082972b01480fd",
+  "weights_bytes": 404953996,
+  "weights_revision": "1c5f13ab9a3a50cbbc729fdf441d1a234aed4169",
+  "parameter_count": 101223557,
+  "model_tensors": 230,
+  "architecture": "ViT-B/16 + 2 convolution/native-Mamba-1 blocks",
+  "classifier_dims": [
+    768,
+    512,
+    256,
+    4
+  ],
+  "class_order": [
+    "CNV",
+    "DME",
+    "DRUSEN",
+    "NORMAL"
+  ],
+  "validation": "Strict tensor loading, numerical scan checks, example inference; not a full benchmark reproduction.",
+  "code_license": "MIT",
+  "weights_license": "Rights reserved; license decision pending",
+  "paper_included": false,
+  "paper_figures_included": false,
+  "dataset_images_included": false,
+  "hosted_demo": null
+}

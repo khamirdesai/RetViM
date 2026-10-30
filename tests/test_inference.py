@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 
 import pytest
 import torch
@@ -35,10 +34,10 @@ def test_release_weights_inference():
         pytest.skip("Set RETVIM_TEST_WEIGHTS to enable real-weight smoke inference.")
     torch.set_num_threads(2)
     predictor = Predictor(weights)
-    for path in sorted(Path("examples").glob("*.jpeg")):
-        with Image.open(path) as image:
-            result = predictor.predict(image)
-        assert result["prediction"] in CLASS_NAMES
-        assert [p["label"] for p in result["probabilities"]] == list(CLASS_NAMES)
-        assert sum(p["probability"] for p in result["probabilities"]) == pytest.approx(1.0, abs=1e-6)
-        assert all(0 <= p["probability"] <= 1 for p in result["probabilities"])
+    # Synthetic input verifies the inference contract, not disease accuracy.
+    image = Image.linear_gradient("L").resize((320, 180)).convert("RGB")
+    result = predictor.predict(image)
+    assert result["prediction"] in CLASS_NAMES
+    assert [p["label"] for p in result["probabilities"]] == list(CLASS_NAMES)
+    assert sum(p["probability"] for p in result["probabilities"]) == pytest.approx(1.0, abs=1e-6)
+    assert all(0 <= p["probability"] <= 1 for p in result["probabilities"])
