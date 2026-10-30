@@ -1,17 +1,7 @@
-# Local research originals and release staging
-.release-work/
+# Local environment and credentials
 .venv/
-*.ckpt
-*.safetensors
-*.pt
-*.pth
-Cross_Domain_OCTDL_Duke_Adaptation.ipynb
-Sequential_Hybrid*.ipynb
-retvim_gscon_camera_ready_submission.pdf
-# Credentials and runtime files
 .env
 .env.*
-!.env.example
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -21,8 +11,35 @@ build/
 dist/
 .DS_Store
 .cache/
-output/
 
-# Manuscript and extracted figures held locally until publication
+# Original research, manuscript and large artifacts stay local
+.release-work/
+output/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.ipynb
+*.pdf
 paper/
-assets/figures/
+assets/
+examples/
+notebooks/
+results/
+web/
+app.py
+Dockerfile
+.dockerignore
+requirements-demo.txt
+tests/test_api.py
+release.json
+verification.json
+
+# Historical private documentation; concise release notes are tracked separately
+docs/artifacts.md
+docs/deployment.md
+docs/model-audit.md
+docs/model-card.md
+docs/paper.md
+docs/reproducibility.md
+docs/space-card.md
