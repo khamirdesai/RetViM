@@ -75,6 +75,12 @@ class NativeMamba(nn.Module):
                                 groups=inner, bias=True)
         self.x_proj = nn.Linear(inner, self.dt_rank + 2 * d_state, bias=False)
         self.dt_proj = nn.Linear(self.dt_rank, inner, bias=True)
+        # Stable Mamba time steps for fresh training; strict checkpoint loading
+        # replaces these initial values during released-model inference.
+        nn.init.uniform_(self.dt_proj.weight, -self.dt_rank ** -0.5, self.dt_rank ** -0.5)
+        with torch.no_grad():
+            dt = torch.exp(torch.empty(inner).uniform_(math.log(0.001), math.log(0.1)))
+            self.dt_proj.bias.copy_(dt + torch.log(-torch.expm1(-dt)))
         initial_a = torch.arange(1, d_state + 1, dtype=torch.float32)
         self.A_log = nn.Parameter(initial_a.log().repeat(inner, 1))
         self.D = nn.Parameter(torch.ones(inner))
@@ -129,9 +135,9 @@ class SSConvSSMBlock(nn.Module):
 class RetViM(nn.Module):
     """Architecture recorded in the improved notebook; load weights before use."""
 
-    def __init__(self):
+    def __init__(self, *, pretrained: bool = False):
         super().__init__()
-        self.vit = timm.create_model(BACKBONE, pretrained=False, num_classes=0,
+        self.vit = timm.create_model(BACKBONE, pretrained=pretrained, num_classes=0,
                                      drop_path_rate=0.1)
         dim = self.vit.num_features
         self.feature_dim = dim

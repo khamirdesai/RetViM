@@ -15,6 +15,7 @@ dist/
 # Original research, manuscript and large artifacts stay local
 .release-work/
 output/
+runs/
 *.ckpt
 *.safetensors
 *.pt

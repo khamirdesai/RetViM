@@ -17,7 +17,7 @@ base_model: timm/vit_base_patch16_224.augreg_in21k_ft_in1k
 
 **Sequential Hybrid Vision Transformer with MedMamba for Retinal Disease Classification**
 
-Accepted for presentation at **IEEE GSCon 2027**, Paper 533.
+Accepted for presentation at **IEEE GSCon 2027**.
 
 Khamir Desai · Mayuri A. Mehta · Sree Saicharan Vadapalli
 
@@ -35,6 +35,14 @@ Khamir Desai · Mayuri A. Mehta · Sree Saicharan Vadapalli
 | Weights | Float32 safetensors, 404.95 MB |
 
 The supplied checkpoint uses **native 1D Mamba**, with pooling fusion and classifier dimensions that differ from the manuscript's summarized SS2D configuration. The linked implementation preserves the trained tensors and loads them strictly. It is a custom PyTorch model, not a Transformers `AutoModel` checkpoint.
+
+## Dataset and reported result
+
+[Kermany retinal OCT dataset](https://www.kaggle.com/datasets/paultimothymooney/kermany2018), with CNV, DME, DRUSEN and NORMAL labels. [Original dataset record](https://data.mendeley.com/datasets/rscbjbr9sj/2).
+
+The manuscript reports **99.90% accuracy (967/968 test images)**, the highest among the methods compared there. This is paper-reported, not an independently verified overall leaderboard ranking or a newly reproduced benchmark.
+
+Standalone [training and evaluation instructions](https://github.com/khamirdesai/RetViM/blob/main/docs/training.md) are available with the source. New training runs use explicit, hashed patient-disjoint manifests and are not claimed to recreate the original split.
 
 ## Inference
 

@@ -28,7 +28,7 @@ Output order is `CNV, DME, DRUSEN, NORMAL`. The model returns logits; the predic
 Strict loading, numerical scan checks, and example inference were verified. The complete manuscript benchmark has not been independently rerun. The repository's tests use synthetic input for the inference contract, without redistributing patient or dataset images.
 
 ```bash
-pip install -e '.[dev]'
+pip install -e '.[dev,train,eval]'
 pytest
 RETVIM_TEST_WEIGHTS=/path/to/model.safetensors pytest -m weights
 ```

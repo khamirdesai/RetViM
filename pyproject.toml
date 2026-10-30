@@ -20,6 +20,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
 eval = ["scikit-learn>=1.5,<2"]
+train = ["scikit-learn>=1.5,<2", "albumentations>=2.0.8,<2.1"]
 
 [project.scripts]
 retvim = "retvim.cli:main"

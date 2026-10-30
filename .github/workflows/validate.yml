@@ -16,7 +16,7 @@ jobs:
       - name: Install CPU runtime and package
         run: |
           pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cpu
-          pip install -e '.[dev]'
+          pip install -e '.[dev,train,eval]'
       - name: Static checks
         run: ruff check src scripts tests
       - name: Unit tests (no weight download)

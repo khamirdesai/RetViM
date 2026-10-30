@@ -2,7 +2,7 @@
 
 **Sequential Hybrid Vision Transformer with MedMamba for Retinal Disease Classification**
 
-Accepted for presentation at **IEEE GSCon 2027**, Paper 533.
+Accepted for presentation at **IEEE GSCon 2027**.
 
 Khamir Desai · Mayuri A. Mehta · Sree Saicharan Vadapalli
 
@@ -31,6 +31,28 @@ The first run downloads the pinned Hugging Face checkpoint. For local weights:
 ```bash
 retvim predict --image /path/to/oct.png --weights /path/to/model.safetensors
 ```
+
+## Dataset and reported result
+
+[Kermany retinal OCT dataset (Kaggle)](https://www.kaggle.com/datasets/paultimothymooney/kermany2018): CNV, DME, DRUSEN and NORMAL. [Original dataset record](https://data.mendeley.com/datasets/rscbjbr9sj/2).
+
+| Model | Test images | Accuracy (paper-reported) |
+| --- | ---: | ---: |
+| RetViM | 968 | **99.90% (967/968)** |
+
+This is the highest accuracy among the methods compared in our manuscript. It is not an independently verified overall leaderboard ranking; this release has not rerun the full benchmark.
+
+## Training and evaluation
+
+```bash
+pip install -e '.[train,eval]'
+retvim prepare-data --data /path/to/OCT2017 --output runs/data/manifest.json
+retvim train --manifest runs/data/manifest.json --output runs/retvim --device cuda
+python scripts/evaluate.py --manifest runs/data/manifest.json \
+  --weights runs/retvim/best.safetensors --output runs/retvim/test.json --device cuda
+```
+
+Training exports `best.safetensors` and `last.safetensors`, both compatible with `retvim predict --weights`. Data preparation records hashes, keeps the supplied test set fixed, and rejects patient/file overlap. See [training settings and validation scope](docs/training.md). Download dataset files separately under their own terms.
 
 ## Checkpoint
 

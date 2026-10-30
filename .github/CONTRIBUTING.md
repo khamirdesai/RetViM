@@ -5,7 +5,7 @@ Please open an issue for reproducible bugs, model/metadata discrepancies, and do
 Use Python 3.12 for local validation:
 
 ```bash
-pip install -e '.[dev]'
+pip install -e '.[dev,train,eval]'
 ruff check src scripts tests
 pytest
 ```
