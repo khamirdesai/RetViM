@@ -45,7 +45,7 @@ pip install -e .
 retvim predict --image /path/to/oct.png
 ```
 
-Private access uses your configured Hugging Face authentication. For offline inference, add `--weights /path/to/model.safetensors`.
+The first run downloads the pinned checkpoint. For offline inference, add `--weights /path/to/model.safetensors`.
 
 The package verifies the pinned checkpoint's SHA-256:
 
@@ -55,7 +55,7 @@ The package verifies the pinned checkpoint's SHA-256:
 
 ## Scope and license
 
-Strict tensor loading, scan equations, and example inference were checked. The full paper benchmark was not independently rerun. Research only; scores are uncalibrated and no prospective clinical validation is claimed.
+Strict tensor loading, scan equations, and example inference were checked. The full paper benchmark was not independently rerun. Intended for research; scores are uncalibrated and no prospective clinical validation is claimed.
 
 Original code: MIT. **Weights: license pending; rights reserved** under `LICENSE_WEIGHTS`. The manuscript, publisher PDF, and paper figures are not included. Final publication metadata will be added when available.
 

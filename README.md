@@ -26,7 +26,7 @@ pip install -e .
 retvim predict --image /path/to/oct.png
 ```
 
-The first run downloads the pinned Hugging Face checkpoint. Private-repository access uses your configured Hugging Face authentication. For local weights:
+The first run downloads the pinned Hugging Face checkpoint. For local weights:
 
 ```bash
 retvim predict --image /path/to/oct.png --weights /path/to/model.safetensors
@@ -59,6 +59,6 @@ Mentor: **Prof. Mayuri A. Mehta**. We acknowledge [MedMamba](https://github.com/
 
 ## License
 
-Original implementation: [MIT](LICENSE). Model weights: license pending; rights reserved. Research use only; no prospective clinical validation is claimed.
+Original implementation: [MIT](LICENSE). Model weights: license pending; rights reserved. Intended for research; no prospective clinical validation is claimed.
 
 The manuscript, paper figures, and publisher PDF are not distributed here. See [copyright scope](COPYRIGHT.md) and [license scope](LICENSES.md).

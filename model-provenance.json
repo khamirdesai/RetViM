@@ -5,7 +5,7 @@
   "weights_file": "model.safetensors",
   "weights_sha256": "45c2042229b00b8ac882722c092b5e99708b6ff1d8ab900ae7082972b01480fd",
   "weights_bytes": 404953996,
-  "weights_revision": "1c5f13ab9a3a50cbbc729fdf441d1a234aed4169",
+  "weights_revision": "162458f196bbead24f71421f94322d6fb7fdae11",
   "parameter_count": 101223557,
   "model_tensors": 230,
   "architecture": "ViT-B/16 + 2 convolution/native-Mamba-1 blocks",
@@ -27,5 +27,6 @@
   "paper_included": false,
   "paper_figures_included": false,
   "dataset_images_included": false,
-  "hosted_demo": null
+  "hosted_demo": null,
+  "repository_scope": "Code and checkpoint metadata only; no manuscript, figures or dataset images."
 }
