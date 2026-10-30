@@ -21,7 +21,7 @@ Accepted for presentation at **IEEE GSCon 2027**, Paper 533.
 
 Khamir Desai · Mayuri A. Mehta · Sree Saicharan Vadapalli
 
-[Code](https://github.com/khamirdesai/RetViM) · [Checkpoint details](https://github.com/khamirdesai/RetViM/blob/main/CHECKPOINT.md) · [Citation](https://github.com/khamirdesai/RetViM/blob/main/CITATION.cff)
+[Code](https://github.com/khamirdesai/RetViM) · [Checkpoint details](https://github.com/khamirdesai/RetViM/blob/main/docs/checkpoint.md) · [Citation](https://github.com/khamirdesai/RetViM/blob/main/CITATION.cff)
 
 ## Model
 

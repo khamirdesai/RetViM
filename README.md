@@ -8,7 +8,7 @@ Khamir Desai · Mayuri A. Mehta · Sree Saicharan Vadapalli
 
 RetViM combines a Vision Transformer with convolution/state-space blocks for four-class retinal OCT classification: **CNV, DME, DRUSEN, NORMAL**.
 
-[Model weights](https://huggingface.co/khamirdesai/RetViM) · [Checkpoint details](CHECKPOINT.md) · [Citation](CITATION.cff)
+[Model weights](https://huggingface.co/khamirdesai/RetViM) · [Checkpoint details](docs/checkpoint.md) · [Citation](CITATION.cff)
 
 ## Installation
 
@@ -38,7 +38,7 @@ retvim predict --image /path/to/oct.png --weights /path/to/model.safetensors
 | --- | ---: | ---: | --- | --- |
 | ViT-B/16 | 2 | 101.22M | RGB, 224 × 224 | safetensors |
 
-The supplied checkpoint uses **native 1D Mamba**. Its scan backend and classifier differ from the manuscript's summarized SS2D configuration; this implementation preserves the trained tensors. See [CHECKPOINT.md](CHECKPOINT.md). The full paper benchmark has not been independently rerun by this release.
+The supplied checkpoint uses **native 1D Mamba**. Its scan backend and classifier differ from the manuscript's summarized SS2D configuration; this implementation preserves the trained tensors. See [checkpoint details](docs/checkpoint.md). The full paper benchmark has not been independently rerun by this release.
 
 ## Citation
 
@@ -61,4 +61,4 @@ Mentor: **Prof. Mayuri A. Mehta**. We acknowledge [MedMamba](https://github.com/
 
 Original implementation: [MIT](LICENSE). Model weights: license pending; rights reserved. Intended for research; no prospective clinical validation is claimed.
 
-The manuscript, paper figures, and publisher PDF are not distributed here. See [copyright scope](COPYRIGHT.md) and [license scope](LICENSES.md).
+The manuscript, paper figures, and publisher PDF are not distributed here. See [copyright scope](docs/publication.md) and [license scope](docs/license-scope.md).
